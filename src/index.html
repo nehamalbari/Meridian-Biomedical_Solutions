@@ -36,7 +36,7 @@
 
 
     <!-- =====================================================
-         NAVBAR
+        NAVBAR
     ====================================================== -->
 
     <nav class="fixed top-0 left-0 right-0 z-50
@@ -51,49 +51,50 @@
                 <a href="#home"
                 class="flex items-center gap-3 group">
 
-                <div class="relative w-12 h-12
-                            flex items-center justify-center
-                            rounded-lg
-                            group-hover:border-neon
-                            group-hover:shadow-[0_0_20px_rgba(57,255,136,0.35)]
-                            transition duration-300
-                            overflow-hidden">
+                    <div class="relative w-12 h-12
+                                flex items-center justify-center
+                                rounded-lg
+                                group-hover:border-neon
+                                group-hover:shadow-[0_0_20px_rgba(57,255,136,0.35)]
+                                transition duration-300
+                                overflow-hidden">
 
-                    <img src="./images/meridian_logo_2.jpeg"
-                        alt="Meridian_logo_black_theme"
-                        class="w-full h-full object-contain p-1
-                                group-hover:scale-110
-                                transition-transform duration-300">
-
-
-                </div>
-
-                <div>
-
-                    <div class="text-white font-bold
-                                tracking-[0.18em] text-lg leading-none">
-                        MERIDIAN
+                        <img src="./images/meridian_logo_2.jpeg"
+                            alt="Meridian_logo_black_theme"
+                            class="w-full h-full object-contain p-1
+                                    group-hover:scale-110
+                                    transition-transform duration-300">
                     </div>
 
-                    <div class="text-[8px] tracking-[0.3em]
-                                text-gray-500 mt-1">
-                        BIOMEDICAL SOLUTION
-                    </div>
+                    <div>
 
-                </div>
+                        <div class="text-white font-bold
+                                    tracking-[0.18em] text-lg leading-none">
+                            MERIDIAN
+                        </div>
+
+                        <div class="text-[8px] tracking-[0.3em]
+                                    text-gray-500 mt-1">
+                            BIOMEDICAL SOLUTION
+                        </div>
+
+                    </div>
 
                 </a>
 
 
-                <!-- DESKTOP NAVIGATION -->
+                <!-- =================================================
+                    DESKTOP NAVIGATION
+                ================================================== -->
+
                 <div class="hidden lg:flex items-center gap-10">
 
                     <a href="#home"
-                       class="group relative py-2
-                              text-xs font-semibold
-                              tracking-[0.2em]
-                              text-gray-400
-                              hover:text-white transition">
+                    class="group relative py-2
+                            text-xs font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-white transition">
 
                         HOME
 
@@ -108,11 +109,11 @@
 
 
                     <a href="#about"
-                       class="group relative py-2
-                              text-xs font-semibold
-                              tracking-[0.2em]
-                              text-gray-400
-                              hover:text-white transition">
+                    class="group relative py-2
+                            text-xs font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-white transition">
 
                         ABOUT
 
@@ -127,11 +128,11 @@
 
 
                     <a href="#services"
-                       class="group relative py-2
-                              text-xs font-semibold
-                              tracking-[0.2em]
-                              text-gray-400
-                              hover:text-white transition">
+                    class="group relative py-2
+                            text-xs font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-white transition">
 
                         SERVICES
 
@@ -146,11 +147,11 @@
 
 
                     <a href="#products"
-                       class="group relative py-2
-                              text-xs font-semibold
-                              tracking-[0.2em]
-                              text-gray-400
-                              hover:text-white transition">
+                    class="group relative py-2
+                            text-xs font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-white transition">
 
                         PRODUCTS
 
@@ -163,26 +164,27 @@
 
                     </a>
 
-
                 </div>
 
 
-                <!-- RIGHT SIDE -->
+                <!-- =================================================
+                    DESKTOP CONTACT
+                ================================================== -->
+
                 <div class="hidden lg:flex items-center gap-5">
 
-
                     <a href="#contact"
-                       class="group flex items-center gap-2
-                              px-5 py-2.5
-                              border border-neon/50
-                              rounded-full
-                              text-xs font-bold
-                              tracking-[0.15em]
-                              text-neon
-                              hover:bg-neon
-                              hover:text-black
-                              hover:shadow-[0_0_25px_rgba(57,255,136,0.35)]
-                              transition duration-300">
+                    class="group flex items-center gap-2
+                            px-5 py-2.5
+                            border border-neon/50
+                            rounded-full
+                            text-xs font-bold
+                            tracking-[0.15em]
+                            text-neon
+                            hover:bg-neon
+                            hover:text-black
+                            hover:shadow-[0_0_25px_rgba(57,255,136,0.35)]
+                            transition duration-300">
 
                         CONTACT
 
@@ -197,20 +199,132 @@
                 </div>
 
 
-                <!-- MOBILE MENU -->
-                <button class="lg:hidden
-                               w-10 h-10
-                               flex items-center justify-center
-                               border border-white/10
-                               rounded-lg
-                               text-gray-300
-                               hover:border-neon
-                               hover:text-neon
-                               transition">
+                <!-- =================================================
+                    MOBILE HAMBURGER BUTTON
+                ================================================== -->
 
-                    <span class="text-xl">☰</span>
+                <button id="mobile-menu-button"
+                        type="button"
+                        aria-label="Open mobile menu"
+                        aria-expanded="false"
+                        class="lg:hidden
+                            w-10 h-10
+                            flex items-center justify-center
+                            border border-white/10
+                            rounded-lg
+                            text-gray-300
+                            hover:border-neon
+                            hover:text-neon
+                            transition">
+
+                    <span id="menu-icon"
+                        class="text-xl leading-none">
+                        ☰
+                    </span>
 
                 </button>
+
+            </div>
+
+
+            <!-- =================================================
+                MOBILE MENU
+            ================================================== -->
+
+            <div id="mobile-menu"
+                class="lg:hidden
+                        max-h-0
+                        opacity-0
+                        overflow-hidden
+                        pointer-events-none
+                        transition-all duration-300 ease-in-out">
+
+                <div class="py-5 border-t border-white/10">
+
+                    <!-- HOME -->
+                    <a href="#home"
+                    class="mobile-menu-link
+                            block py-4
+                            text-sm font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-neon
+                            transition">
+
+                        HOME
+
+                    </a>
+
+
+                    <!-- ABOUT -->
+                    <a href="#about"
+                    class="mobile-menu-link
+                            block py-4
+                            text-sm font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-neon
+                            transition">
+
+                        ABOUT
+
+                    </a>
+
+
+                    <!-- SERVICES -->
+                    <a href="#services"
+                    class="mobile-menu-link
+                            block py-4
+                            text-sm font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-neon
+                            transition">
+
+                        SERVICES
+
+                    </a>
+
+
+                    <!-- PRODUCTS -->
+                    <a href="#products"
+                    class="mobile-menu-link
+                            block py-4
+                            text-sm font-semibold
+                            tracking-[0.2em]
+                            text-gray-400
+                            hover:text-neon
+                            transition">
+
+                        PRODUCTS
+
+                    </a>
+
+
+                    <!-- CONTACT -->
+                    <a href="#contact"
+                    class="mobile-menu-link
+                            flex items-center justify-between
+                            mt-3
+                            px-5 py-3.5
+                            border border-neon/50
+                            rounded-full
+                            text-sm font-bold
+                            tracking-[0.15em]
+                            text-neon
+                            hover:bg-neon
+                            hover:text-black
+                            transition">
+
+                        CONTACT
+
+                        <span class="text-base">
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -285,7 +399,7 @@
                                          tracking-[0.35em]
                                          uppercase
                                          text-neon">
-                                Biomedical Technology
+                                UAE based Healthcare Technology
                             </span>
 
                         </div>
@@ -4007,6 +4121,98 @@ class="group
             animateDNA();
         }
     }
+
+   
+
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
+        let mobileMenuOpen = false;
+
+
+        // OPEN / CLOSE MOBILE MENU
+        mobileMenuButton.addEventListener("click", () => {
+
+            mobileMenuOpen = !mobileMenuOpen;
+
+            if (mobileMenuOpen) {
+
+                // Open menu
+                mobileMenu.classList.remove(
+                    "max-h-0",
+                    "opacity-0",
+                    "pointer-events-none"
+                );
+
+                mobileMenu.classList.add(
+                    "max-h-[500px]",
+                    "opacity-100",
+                    "pointer-events-auto"
+                );
+
+                // Change hamburger → X
+                menuIcon.textContent = "✕";
+
+                mobileMenuButton.setAttribute("aria-expanded", "true");
+                mobileMenuButton.setAttribute("aria-label", "Close mobile menu");
+
+            } else {
+
+                // Close menu
+                mobileMenu.classList.add(
+                    "max-h-0",
+                    "opacity-0",
+                    "pointer-events-none"
+                );
+
+                mobileMenu.classList.remove(
+                    "max-h-[500px]",
+                    "opacity-100",
+                    "pointer-events-auto"
+                );
+
+                // Change X → hamburger
+                menuIcon.textContent = "☰";
+
+                mobileMenuButton.setAttribute("aria-expanded", "false");
+                mobileMenuButton.setAttribute("aria-label", "Open mobile menu");
+            }
+
+        });
+
+
+        // CLOSE MENU WHEN A LINK IS CLICKED
+        mobileMenuLinks.forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                mobileMenuOpen = false;
+
+                mobileMenu.classList.add(
+                    "max-h-0",
+                    "opacity-0",
+                    "pointer-events-none"
+                );
+
+                mobileMenu.classList.remove(
+                    "max-h-[500px]",
+                    "opacity-100",
+                    "pointer-events-auto"
+                );
+
+                menuIcon.textContent = "☰";
+
+                mobileMenuButton.setAttribute("aria-expanded", "false");
+                mobileMenuButton.setAttribute("aria-label", "Open mobile menu");
+
+            });
+
+        });
+
+
+
     </script>
 
 
