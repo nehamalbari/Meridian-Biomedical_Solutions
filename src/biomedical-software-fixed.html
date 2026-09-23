@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meridian Biomedical Software — intelligent biomedical equipment maintenance and asset management.">
+  <link href="./output.css" rel="stylesheet">
+  <!-- Standalone fallback: keeps the Meridian theme visible even when this HTML is opened by itself. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { neon: '#39ff88', dark: '#060807' } } }
+    };
+  </script>
+  <title>Biomedical Software | Meridian Biomedical Solution</title>
+  <style>
+    :root{--neon:#39ff88;--bg:#060807;--panel:#0c110e;--panel2:#101713;--line:rgba(255,255,255,.10)}
+    html{background:var(--bg)}
+    body{background:var(--bg);color:#fff}
+    .grid-bg{background-image:linear-gradient(rgba(57,255,136,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(57,255,136,.045) 1px,transparent 1px);background-size:56px 56px}
+    .noise{background-image:radial-gradient(rgba(255,255,255,.055) 1px,transparent 1px);background-size:4px 4px;opacity:.05}
+    .green-glow{box-shadow:0 0 45px rgba(57,255,136,.08),inset 0 0 30px rgba(57,255,136,.025)}
+    .hover-card{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+    .hover-card:hover{transform:translateY(-5px);border-color:rgba(57,255,136,.5);box-shadow:0 0 32px rgba(57,255,136,.10)}
+    .tab-active{border-color:rgba(57,255,136,.65)!important;background:rgba(57,255,136,.06)!important;color:#fff!important;box-shadow:0 0 25px rgba(57,255,136,.08)}
+    .scan{animation:scan 4.5s linear infinite}
+    @keyframes scan{0%{transform:translateY(-140%);opacity:0}15%{opacity:.45}50%{opacity:.12}85%{opacity:.4}100%{transform:translateY(520%);opacity:0}}
+    .float{animation:float 5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    .pulse{animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(57,255,136,.35)}50%{box-shadow:0 0 0 9px rgba(57,255,136,0)}}
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+  <div class="fixed inset-0 -z-50 bg-[#060807]"></div>
+  <div class="fixed -top-64 -right-64 -z-40 w-[700px] h-[700px] rounded-full bg-neon/10 blur-[190px]"></div>
+  <div class="fixed -bottom-64 -left-64 -z-40 w-[650px] h-[650px] rounded-full bg-neon/5 blur-[180px]"></div>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="h-20 flex items-center justify-between">
+        <a href="./index.html#home" class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg overflow-hidden">
+            <img src="./images/meridian_logo_2.jpeg" alt="Meridian Biomedical Solution" class="w-full h-full object-contain p-1">
+          </div>
+          <div>
+            <div class="font-bold tracking-[.18em] text-lg leading-none">MERIDIAN</div>
+            <div class="text-[8px] tracking-[.3em] text-gray-500 mt-1">BIOMEDICAL SOLUTION</div>
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-9">
+          <a href="#features" class="text-xs font-semibold tracking-[.18em] text-gray-400 hover:text-neon transition">FEATURES</a>
+          <a href="#dashboard" class="text-xs font-semibold tracking-[.18em] text-gray-400 hover:text-neon transition">DASHBOARD</a>
+          <a href="#modules" class="text-xs font-semibold tracking-[.18em] text-gray-400 hover:text-neon transition">MODULES</a>
+          <a href="./index.html" class="text-xs font-semibold tracking-[.18em] text-gray-400 hover:text-neon transition">MERIDIAN HOME</a>
+        </div>
+
+        <a href="#modules" class="hidden lg:inline-flex px-6 py-3 rounded-full bg-neon text-black text-xs font-black tracking-[.12em] hover:shadow-[0_0_30px_rgba(57,255,136,.35)] transition">
+          EXPLORE SOFTWARE
+        </a>
+
+        <button id="menuBtn" class="lg:hidden w-10 h-10 border border-white/10 rounded-lg text-gray-300 hover:text-neon hover:border-neon transition" aria-expanded="false">☰</button>
+      </div>
+
+      <div id="mobileMenu" class="lg:hidden max-h-0 opacity-0 overflow-hidden pointer-events-none transition-all duration-300">
+        <div class="border-t border-white/10 py-4 space-y-1">
+          <a href="#features" class="mobile-link block py-3 text-sm tracking-[.16em] text-gray-400">FEATURES</a>
+          <a href="#dashboard" class="mobile-link block py-3 text-sm tracking-[.16em] text-gray-400">DASHBOARD</a>
+          <a href="#modules" class="mobile-link block py-3 text-sm tracking-[.16em] text-gray-400">MODULES</a>
+          <a href="./index.html" class="mobile-link block py-3 text-sm tracking-[.16em] text-gray-400">MERIDIAN HOME</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-20">
+
+    <!-- HERO -->
+    <section id="features" class="relative min-h-[720px] grid-bg overflow-hidden">
+      <div class="absolute inset-0 noise pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-6 py-20 lg:py-24">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <div class="inline-flex items-center gap-3 rounded-full border border-neon/35 px-4 py-2 text-[10px] tracking-[.25em] text-neon mb-7">
+              <span class="w-2 h-2 rounded-full bg-neon pulse"></span>
+              INTELLIGENT ASSET MANAGEMENT
+            </div>
+
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-[82px] font-black leading-[.91] tracking-[-.045em]">
+              RELIABLE
+              <br><span class="text-neon [text-shadow:0_0_35px_rgba(57,255,136,.28)]">HEALTHCARE</span>
+              <br>OPERATIONS.
+            </h1>
+
+            <p class="mt-8 max-w-xl text-lg text-gray-400 leading-relaxed">
+              A computerized maintenance and biomedical asset management platform designed to keep medical equipment visible, serviceable and ready for care.
+            </p>
+
+            <div class="mt-9 flex flex-wrap gap-4">
+              <a href="#modules" class="px-7 py-4 rounded-full bg-neon text-black font-black text-sm hover:shadow-[0_0_35px_rgba(57,255,136,.35)] transition">VIEW MODULES ↘</a>
+              <a href="#dashboard" class="px-7 py-4 rounded-full border border-white/15 text-sm font-semibold hover:border-neon hover:text-neon transition">SEE DASHBOARD</a>
+            </div>
+
+            <div class="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-[9px] tracking-[.2em] text-gray-600 uppercase">
+              <span>Biomedical CMMS</span><span class="text-neon/40">/</span><span>PM</span><span class="text-neon/40">/</span><span>Calibration</span><span class="text-neon/40">/</span><span>Asset Lifecycle</span>
+            </div>
+          </div>
+
+          <!-- DASHBOARD HERO VISUAL -->
+          <div id="dashboard" class="relative float">
+            <div class="absolute -inset-5 rounded-[34px] bg-neon/5 blur-2xl"></div>
+            <div class="relative rounded-3xl border border-neon/20 bg-[#0b100d]/95 green-glow overflow-hidden">
+              <div class="absolute inset-x-0 top-0 h-28 bg-neon/5 scan pointer-events-none"></div>
+
+              <div class="h-14 border-b border-white/10 flex items-center justify-between px-5">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-neon"></span>
+                  <span class="text-[9px] tracking-[.22em] text-gray-500">MERIDIAN // BIOMEDICAL CONTROL</span>
+                </div>
+                <span class="text-[9px] text-neon tracking-widest">LIVE</span>
+              </div>
+
+              <div class="p-5">
+                <div class="grid grid-cols-3 gap-3">
+                  <div class="rounded-xl border border-white/10 bg-black/45 p-4">
+                    <p class="text-[8px] tracking-widest text-gray-600">ASSETS</p>
+                    <p class="mt-2 text-2xl font-black">1,284</p>
+                    <p class="mt-1 text-[8px] text-neon">REGISTERED</p>
+                  </div>
+                  <div class="rounded-xl border border-white/10 bg-black/45 p-4">
+                    <p class="text-[8px] tracking-widest text-gray-600">UPTIME</p>
+                    <p class="mt-2 text-2xl font-black">98.7%</p>
+                    <p class="mt-1 text-[8px] text-neon">HEALTHY</p>
+                  </div>
+                  <div class="rounded-xl border border-white/10 bg-black/45 p-4">
+                    <p class="text-[8px] tracking-widest text-gray-600">OPEN JOBS</p>
+                    <p class="mt-2 text-2xl font-black">31</p>
+                    <p class="mt-1 text-[8px] text-gray-500">ACTIVE</p>
+                  </div>
+                </div>
+
+                <div class="mt-4 rounded-xl border border-white/10 bg-black/45 p-5">
+                  <div class="flex items-center justify-between">
+                    <p class="text-[9px] tracking-widest text-gray-500">EQUIPMENT STATUS</p>
+                    <span class="text-[8px] text-gray-600">TODAY</span>
+                  </div>
+                  <div class="mt-5 grid grid-cols-2 gap-3">
+                    <div class="rounded-lg bg-[#101712] border border-white/10 p-4">
+                      <div class="flex justify-between text-[9px]"><span class="text-gray-500">Operational</span><span class="text-neon">86%</span></div>
+                      <div class="mt-2 h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[86%] bg-neon"></div></div>
+                    </div>
+                    <div class="rounded-lg bg-[#101712] border border-white/10 p-4">
+                      <div class="flex justify-between text-[9px]"><span class="text-gray-500">Calibration</span><span class="text-neon">94%</span></div>
+                      <div class="mt-2 h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[94%] bg-neon"></div></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 rounded-xl border border-neon/15 bg-neon/5 p-4">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-[8px] tracking-widest text-gray-600">NEXT MAINTENANCE</p>
+                      <p class="mt-1 text-sm font-semibold">Ventilator — Preventive Maintenance</p>
+                    </div>
+                    <span class="text-neon text-xl">→</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="border-y border-white/10 bg-[#0a0f0c]">
+      <div class="max-w-7xl mx-auto px-6 py-10">
+        <div class="grid md:grid-cols-3">
+          <div class="px-5 py-3 md:border-r border-white/10">
+            <div class="text-4xl font-black text-neon">ASSET</div>
+            <div class="mt-1 text-sm text-gray-500">Lifecycle visibility</div>
+          </div>
+          <div class="px-5 py-3 md:border-r border-white/10">
+            <div class="text-4xl font-black">PM + CM</div>
+            <div class="mt-1 text-sm text-gray-500">Preventive & corrective workflows</div>
+          </div>
+          <div class="px-5 py-3">
+            <div class="text-4xl font-black text-neon">DATA</div>
+            <div class="mt-1 text-sm text-gray-500">Maintenance-ready records</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="modules" class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="text-[10px] tracking-[.3em] text-neon">CORE OPERATIONAL MODULES</p>
+          <h2 class="mt-4 text-4xl md:text-5xl font-black">MANAGE EQUIPMENT<br><span class="text-gray-500">BEYOND SPREADSHEETS.</span></h2>
+          <p class="mt-5 text-gray-400">A modular workspace for biomedical teams to register assets, plan service, track parts and monitor equipment reliability.</p>
+        </div>
+
+        <div class="mt-14 grid lg:grid-cols-2 gap-5">
+          <article class="hover-card rounded-3xl border border-neon/50 bg-[#0d130f] p-8 min-h-[290px] relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full border border-neon/20"></div>
+            <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/30 text-neon flex items-center justify-center text-2xl">＋</div>
+            <h3 class="mt-8 text-2xl font-black">Preventive Maintenance</h3>
+            <p class="mt-3 max-w-xl text-gray-500 leading-relaxed">Plan scheduled maintenance, generate recurring tasks, maintain checklists and keep calibration activity visible before equipment becomes a problem.</p>
+            <div class="absolute right-12 bottom-10 w-20 h-20 rounded-full border-2 border-neon/30"></div>
+            <div class="absolute right-[58px] bottom-[30px] w-10 h-10 rounded-full border border-neon/40"></div>
+          </article>
+
+          <article class="hover-card rounded-3xl border border-white/10 bg-[#0d130f] p-8 min-h-[290px]">
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-neon flex items-center justify-center text-xl">▦</div>
+            <h3 class="mt-8 text-2xl font-black">QR Code Tracking</h3>
+            <p class="mt-3 text-gray-500 leading-relaxed">Give each asset a scannable identity so technicians can reach equipment records, service history and open work orders quickly.</p>
+          </article>
+
+          <article class="hover-card rounded-3xl border border-white/10 bg-[#0d130f] p-8 min-h-[290px]">
+            <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-neon flex items-center justify-center text-xl">◇</div>
+            <h3 class="mt-8 text-2xl font-black">Inventory Management</h3>
+            <p class="mt-3 text-gray-500 leading-relaxed">Track spare parts, connect stock to service schedules and maintain a clearer view of what technicians need for maintenance.</p>
+          </article>
+
+          <article class="hover-card rounded-3xl border border-neon/50 bg-[#0d130f] p-8 min-h-[290px] relative overflow-hidden">
+            <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/30 text-neon flex items-center justify-center text-xl">▥</div>
+            <h3 class="mt-8 text-2xl font-black">Predictive Analytics</h3>
+            <p class="mt-3 text-gray-500 leading-relaxed">Use maintenance history and operational signals to identify patterns, prioritize attention and support planning.</p>
+            <svg class="absolute right-7 bottom-7 w-48 h-20 opacity-50" viewBox="0 0 200 80" fill="none">
+              <polyline points="0,62 32,44 65,52 98,23 128,35 158,9 200,20" stroke="#39ff88" stroke-width="2"/>
+            </svg>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSET LIFECYCLE -->
+    <section class="py-24 bg-[#0a0f0c] border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+          <div>
+            <p class="text-[10px] tracking-[.3em] text-neon">ASSET LIFECYCLE</p>
+            <h2 class="mt-4 text-4xl md:text-5xl font-black">COMPLETE ASSET<br><span class="text-gray-500">LIFECYCLE MANAGEMENT.</span></h2>
+            <p class="mt-6 text-gray-400 leading-relaxed">Connect procurement, installation, maintenance, calibration, service history and retirement into one continuous equipment record.</p>
+
+            <div class="mt-9 space-y-6">
+              <div class="flex gap-4"><span class="w-8 h-8 shrink-0 rounded-full border border-neon/40 text-neon flex items-center justify-center text-xs">✓</span><div><h3 class="font-bold">Work Order Tracking</h3><p class="text-sm text-gray-500 mt-1">Create, assign and monitor service jobs with clear status and priority.</p></div></div>
+              <div class="flex gap-4"><span class="w-8 h-8 shrink-0 rounded-full border border-neon/40 text-neon flex items-center justify-center text-xs">✓</span><div><h3 class="font-bold">Multi-Location Control</h3><p class="text-sm text-gray-500 mt-1">Keep equipment records organized across hospitals, departments and service locations.</p></div></div>
+              <div class="flex gap-4"><span class="w-8 h-8 shrink-0 rounded-full border border-neon/40 text-neon flex items-center justify-center text-xs">✓</span><div><h3 class="font-bold">Connected Data</h3><p class="text-sm text-gray-500 mt-1">Link equipment details, documents, service history and operational records.</p></div></div>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-black/50 p-6 green-glow">
+            <div class="flex items-center justify-between pb-5 border-b border-white/10">
+              <span class="text-[9px] tracking-[.25em] text-gray-500">WORK ORDER QUEUE</span>
+              <span class="text-[9px] text-neon">ACTIVE</span>
+            </div>
+            <div class="mt-4 space-y-3">
+              <div class="rounded-xl border-l-2 border-neon border-y border-r border-white/10 p-4 flex items-center justify-between"><div><b>WO #10024</b><p class="text-xs text-gray-500 mt-1">MRI Scanner Calibration</p></div><span class="text-[9px] px-3 py-1 rounded-full border border-neon/30 text-neon">IN PROGRESS</span></div>
+              <div class="rounded-xl border-l-2 border-amber-400 border-y border-r border-white/10 p-4 flex items-center justify-between"><div><b>WO #10025</b><p class="text-xs text-gray-500 mt-1">Ventilator Preventive Maintenance</p></div><span class="text-[9px] px-3 py-1 rounded-full border border-amber-400/30 text-amber-300">HIGH PRIORITY</span></div>
+              <div class="rounded-xl border-l-2 border-white/20 border-y border-r border-white/10 p-4 flex items-center justify-between"><div><b>WO #10026</b><p class="text-xs text-gray-500 mt-1">Defibrillator Battery Check</p></div><span class="text-[9px] px-3 py-1 rounded-full border border-white/10 text-gray-400">COMPLETED</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto">
+          <p class="text-[10px] tracking-[.3em] text-neon">CONNECTED OPERATIONS</p>
+          <h2 class="mt-4 text-4xl md:text-5xl font-black">BIOMEDICAL SOFTWARE<br><span class="text-gray-500">BUILT FOR REAL FACILITIES.</span></h2>
+          <p class="mt-5 text-gray-400">The same asset-management foundation can support healthcare facilities and other equipment-intensive operations.</p>
+        </div>
+
+        <div class="mt-14 grid lg:grid-cols-[310px_1fr] gap-5">
+          <div id="industryTabs" class="space-y-3">
+            <button data-industry="healthcare" class="industry-tab tab-active w-full text-left rounded-2xl border border-white/10 bg-[#0b100d] px-6 py-5 text-sm font-semibold">＋ Healthcare & Hospitals</button>
+            <button data-industry="manufacturing" class="industry-tab w-full text-left rounded-2xl border border-white/10 bg-[#0b100d] px-6 py-5 text-sm font-semibold text-gray-400">▥ Manufacturing</button>
+            <button data-industry="facilities" class="industry-tab w-full text-left rounded-2xl border border-white/10 bg-[#0b100d] px-6 py-5 text-sm font-semibold text-gray-400">⌂ Facilities Management</button>
+            <button data-industry="utilities" class="industry-tab w-full text-left rounded-2xl border border-white/10 bg-[#0b100d] px-6 py-5 text-sm font-semibold text-gray-400">ϟ Energy & Utilities</button>
+            <button data-industry="transport" class="industry-tab w-full text-left rounded-2xl border border-white/10 bg-[#0b100d] px-6 py-5 text-sm font-semibold text-gray-400">▣ Transportation</button>
+          </div>
+
+          <div class="rounded-3xl border border-white/10 bg-[#0f1611] p-8 md:p-10 min-h-[360px]">
+            <div id="industryContent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="py-24 bg-[#0a0f0c] border-y border-white/10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <p class="text-[10px] tracking-[.3em] text-neon">WHY A BIOMEDICAL CMMS</p>
+          <h2 class="mt-4 text-4xl md:text-5xl font-black">WHY ORGANIZATIONS ADOPT<br><span class="text-gray-500">ASSET MANAGEMENT SOFTWARE</span></h2>
+        </div>
+
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="hover-card rounded-2xl border border-white/15 p-6 text-center bg-[#0d130f]"><div class="text-3xl">◷</div><h3 class="mt-5 font-bold">Reduce Downtime</h3><p class="mt-2 text-xs text-gray-500">Plan service before unexpected failures.</p></div>
+          <div class="hover-card rounded-2xl border border-white/15 p-6 text-center bg-[#0d130f]"><div class="text-3xl">↻</div><h3 class="mt-5 font-bold">Extend Asset Life</h3><p class="mt-2 text-xs text-gray-500">Keep equipment maintained and documented.</p></div>
+          <div class="hover-card rounded-2xl border border-white/15 p-6 text-center bg-[#0d130f]"><div class="text-3xl">⚙</div><h3 class="mt-5 font-bold">Improve Efficiency</h3><p class="mt-2 text-xs text-gray-500">Automate schedules and work-order flow.</p></div>
+          <div class="hover-card rounded-2xl border border-white/15 p-6 text-center bg-[#0d130f]"><div class="text-3xl">◉</div><h3 class="mt-5 font-bold">Cost Control</h3><p class="mt-2 text-xs text-gray-500">Track maintenance activity and parts.</p></div>
+          <div class="hover-card rounded-2xl border border-white/15 p-6 text-center bg-[#0d130f]"><div class="text-3xl">▤</div><h3 class="mt-5 font-bold">Compliance</h3><p class="mt-2 text-xs text-gray-500">Keep records ready for audits and review.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- FINAL CTA WITHOUT CONTACT DETAILS -->
+    <section class="py-24 border-t border-white/10 bg-[#0a0f0c]">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="inline-flex px-4 py-2 rounded-full border border-neon/25 text-[9px] tracking-[.25em] text-neon">MERIDIAN BIOMEDICAL SOFTWARE</div>
+        <h2 class="mt-7 text-4xl md:text-6xl font-black">TURN EQUIPMENT DATA INTO <span class="text-neon">ACTION.</span></h2>
+        <p class="mt-6 text-gray-400">A modern software layer for biomedical asset visibility, maintenance planning and operational control.</p>
+        <a href="#modules" class="mt-9 inline-flex px-8 py-4 rounded-full bg-neon text-black font-black text-sm hover:shadow-[0_0_35px_rgba(57,255,136,.35)] transition">EXPLORE MODULES ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-8 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[10px] tracking-wider text-gray-600">© 2026 Meridian Biomedical Solution. All rights reserved.</p>
+      <a href="./index.html" class="text-[10px] tracking-[.2em] text-gray-600 hover:text-neon transition">MERIDIAN HOME ↗</a>
+    </div>
+  </footer>
+
+  <script>
+    const industryData={
+      healthcare:{title:"Healthcare & Hospitals",desc:"Medical facilities rely on critical devices such as imaging systems, ventilators, monitors, infusion pumps and laboratory equipment.",items:["Keep medical equipment operational","Schedule preventive maintenance and calibration","Track warranty and service coverage","Maintain equipment history and documentation","Reduce the risk of failures during patient care"]},
+      manufacturing:{title:"Manufacturing & Industrial Plants",desc:"Equipment-intensive operations need structured maintenance for production systems, utilities and critical machinery.",items:["Prevent unexpected machine breakdowns","Schedule preventive and predictive maintenance","Track spare parts inventory","Reduce downtime and maintenance costs","Improve production continuity"]},
+      facilities:{title:"Facilities Management",desc:"Large facilities depend on reliable infrastructure, utilities and service workflows across multiple locations.",items:["Manage HVAC, generators and utilities","Track maintenance requests and service tickets","Monitor infrastructure and repairs","Coordinate multi-location assets","Improve operational efficiency"]},
+      utilities:{title:"Energy & Utilities",desc:"Critical infrastructure requires dependable inspection, maintenance and service records for operational continuity.",items:["Maintain power-generation equipment","Monitor electrical and utility systems","Prevent infrastructure failures","Schedule inspection activities","Improve reliability of operations"]},
+      transport:{title:"Transportation & Logistics",desc:"Fleet and infrastructure operators can connect equipment usage, service activity and maintenance schedules.",items:["Schedule vehicle and equipment maintenance","Track usage and repair history","Manage distributed assets","Reduce operational disruptions","Improve fleet reliability"]}
+    };
+    const content=document.getElementById("industryContent");
+    function renderIndustry(key){
+      const d=industryData[key];
+      content.innerHTML=`<div><div class="flex items-start gap-4"><div class="w-14 h-14 shrink-0 rounded-2xl bg-neon/10 border border-neon/20 flex items-center justify-center text-2xl text-neon">◈</div><div><h3 class="text-2xl md:text-3xl font-black">${d.title}</h3><p class="mt-2 text-gray-400 leading-relaxed">${d.desc}</p></div></div><div class="mt-8 grid md:grid-cols-2 gap-4">${d.items.map(x=>`<div class="flex gap-3 text-sm text-gray-300"><span class="text-neon">✓</span><span>${x}</span></div>`).join("")}</div><div class="mt-8 inline-flex rounded-lg border border-neon/20 bg-neon/5 px-4 py-3 text-xs text-neon">Maintain visibility, reliability and operational control.</div></div>`;
+    }
+    renderIndustry("healthcare");
+    document.querySelectorAll(".industry-tab").forEach(btn=>btn.addEventListener("click",()=>{
+      document.querySelectorAll(".industry-tab").forEach(b=>b.classList.remove("tab-active"));
+      btn.classList.add("tab-active");
+      renderIndustry(btn.dataset.industry);
+    }));
+
+    const menuBtn=document.getElementById("menuBtn"), menu=document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click",()=>{
+      const open=menuBtn.getAttribute("aria-expanded")==="true";
+      menuBtn.setAttribute("aria-expanded",String(!open));
+      menu.classList.toggle("max-h-0",open);menu.classList.toggle("opacity-0",open);menu.classList.toggle("pointer-events-none",open);
+      menu.classList.toggle("max-h-[400px]",!open);menu.classList.toggle("opacity-100",!open);menu.classList.toggle("pointer-events-auto",!open);
+      menuBtn.textContent=open?"☰":"✕";
+    });
+    document.querySelectorAll(".mobile-link").forEach(a=>a.addEventListener("click",()=>{
+      menuBtn.setAttribute("aria-expanded","false");menu.classList.add("max-h-0","opacity-0","pointer-events-none");menu.classList.remove("max-h-[400px]","opacity-100","pointer-events-auto");menuBtn.textContent="☰";
+    }));
+  </script>
+</body>
+</html>
