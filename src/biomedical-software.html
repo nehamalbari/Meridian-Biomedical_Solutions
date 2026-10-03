@@ -29,6 +29,293 @@
     @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
     .pulse{animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(57,255,136,.35)}50%{box-shadow:0 0 0 9px rgba(57,255,136,0)}}
+    /* =========================================================
+   MERIDIAN BIOMEDICAL DASHBOARD
+   BLACK + NEON GREEN THEME
+   ========================================================= */
+
+.meridian-card {
+  position: relative;
+  min-height: 130px;
+
+  padding: 15px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12, 22, 16, 0.98),
+      rgba(4, 10, 7, 0.98)
+    );
+
+  border: 1px solid rgba(57, 255, 136, 0.18);
+
+  box-shadow:
+    inset 0 0 25px rgba(57, 255, 136, 0.025),
+    0 8px 25px rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Neon top line */
+
+.meridian-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background: #39ff88;
+
+  box-shadow:
+    0 0 8px rgba(57, 255, 136, 0.7),
+    0 0 18px rgba(57, 255, 136, 0.25);
+}
+
+
+/* subtle green glow inside */
+
+.meridian-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -50px;
+  right: -50px;
+
+  width: 100px;
+  height: 100px;
+
+  background: rgba(57, 255, 136, 0.035);
+
+  filter: blur(30px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* Hover */
+
+.meridian-card:hover {
+
+  transform: translateY(-2px);
+
+  border-color: rgba(57, 255, 136, 0.5);
+
+  box-shadow:
+    inset 0 0 30px rgba(57, 255, 136, 0.04),
+    0 10px 35px rgba(57, 255, 136, 0.08);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.meridian-icon {
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  color: #39ff88;
+
+  font-size: 12px;
+
+  background: rgba(57, 255, 136, 0.06);
+
+  border: 1px solid rgba(57, 255, 136, 0.25);
+
+  box-shadow:
+    0 0 12px rgba(57, 255, 136, 0.06);
+
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.card-number {
+
+  color: #f5fff8;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.04em;
+
+  text-shadow:
+    0 0 15px rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.card-label {
+
+  margin-top: 11px;
+
+  color: rgba(180, 200, 188, 0.65);
+
+  font-size: 8px;
+
+  line-height: 1.4;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.meridian-button {
+
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+
+  height: 27px;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(57, 255, 136, 0.08);
+
+  background: rgba(57, 255, 136, 0.055);
+
+  color: rgba(200, 220, 207, 0.65);
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  transition: all 0.25s ease;
+
+  cursor: pointer;
+}
+
+
+.meridian-button:hover {
+
+  color: #39ff88;
+
+  background: rgba(57, 255, 136, 0.1);
+
+  border-color: rgba(57, 255, 136, 0.3);
+
+  box-shadow:
+    0 0 12px rgba(57, 255, 136, 0.08);
+}
+
+
+/* =========================================================
+   TODAY BADGE
+   ========================================================= */
+
+.today-badge {
+
+  padding: 3px 6px;
+
+  border-radius: 6px;
+
+  background: rgba(57, 255, 136, 0.08);
+
+  border: 1px solid rgba(57, 255, 136, 0.15);
+
+  color: rgba(180, 255, 207, 0.7);
+
+  font-size: 6px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .meridian-card {
+    min-height: 125px;
+  }
+
+  .card-number {
+    font-size: 21px;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .meridian-card {
+    min-height: 125px;
+    padding: 12px;
+  }
+
+  .card-number {
+    font-size: 19px;
+  }
+
+  .card-label {
+    font-size: 7px;
+  }
+
+  .meridian-button {
+    left: 11px;
+    right: 11px;
+    bottom: 10px;
+  }
+
+}
   </style>
 </head>
 
@@ -109,71 +396,266 @@
             </div>
           </div>
 
-          <!-- DASHBOARD HERO VISUAL -->
-          <div id="dashboard" class="relative float">
-            <div class="absolute -inset-5 rounded-[34px] bg-neon/5 blur-2xl"></div>
-            <div class="relative rounded-3xl border border-neon/20 bg-[#0b100d]/95 green-glow overflow-hidden">
-              <div class="absolute inset-x-0 top-0 h-28 bg-neon/5 scan pointer-events-none"></div>
+<!-- DASHBOARD HERO VISUAL -->
+<div id="dashboard" class="relative float">
 
-              <div class="h-14 border-b border-white/10 flex items-center justify-between px-5">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-neon"></span>
-                  <span class="text-[9px] tracking-[.22em] text-gray-500">MERIDIAN // BIOMEDICAL CONTROL</span>
-                </div>
-                <span class="text-[9px] text-neon tracking-widest">LIVE</span>
-              </div>
+  <!-- Outer glow -->
+  <div class="absolute -inset-6 rounded-[34px] bg-neon/5 blur-3xl"></div>
 
-              <div class="p-5">
-                <div class="grid grid-cols-3 gap-3">
-                  <div class="rounded-xl border border-white/10 bg-black/45 p-4">
-                    <p class="text-[8px] tracking-widest text-gray-600">ASSETS</p>
-                    <p class="mt-2 text-2xl font-black">1,284</p>
-                    <p class="mt-1 text-[8px] text-neon">REGISTERED</p>
-                  </div>
-                  <div class="rounded-xl border border-white/10 bg-black/45 p-4">
-                    <p class="text-[8px] tracking-widest text-gray-600">UPTIME</p>
-                    <p class="mt-2 text-2xl font-black">98.7%</p>
-                    <p class="mt-1 text-[8px] text-neon">HEALTHY</p>
-                  </div>
-                  <div class="rounded-xl border border-white/10 bg-black/45 p-4">
-                    <p class="text-[8px] tracking-widest text-gray-600">OPEN JOBS</p>
-                    <p class="mt-2 text-2xl font-black">31</p>
-                    <p class="mt-1 text-[8px] text-gray-500">ACTIVE</p>
-                  </div>
-                </div>
+  <div class="relative rounded-[28px] border border-neon/20
+              bg-[#050a07]/95 overflow-hidden
+              shadow-[0_0_50px_rgba(57,255,136,0.08)]">
 
-                <div class="mt-4 rounded-xl border border-white/10 bg-black/45 p-5">
-                  <div class="flex items-center justify-between">
-                    <p class="text-[9px] tracking-widest text-gray-500">EQUIPMENT STATUS</p>
-                    <span class="text-[8px] text-gray-600">TODAY</span>
-                  </div>
-                  <div class="mt-5 grid grid-cols-2 gap-3">
-                    <div class="rounded-lg bg-[#101712] border border-white/10 p-4">
-                      <div class="flex justify-between text-[9px]"><span class="text-gray-500">Operational</span><span class="text-neon">86%</span></div>
-                      <div class="mt-2 h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[86%] bg-neon"></div></div>
-                    </div>
-                    <div class="rounded-lg bg-[#101712] border border-white/10 p-4">
-                      <div class="flex justify-between text-[9px]"><span class="text-gray-500">Calibration</span><span class="text-neon">94%</span></div>
-                      <div class="mt-2 h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="h-full w-[94%] bg-neon"></div></div>
-                    </div>
-                  </div>
-                </div>
+    <!-- subtle scan effect -->
+    <div class="absolute inset-x-0 top-0 h-32
+                bg-gradient-to-b from-neon/5 to-transparent
+                pointer-events-none"></div>
 
-                <div class="mt-4 rounded-xl border border-neon/15 bg-neon/5 p-4">
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <p class="text-[8px] tracking-widest text-gray-600">NEXT MAINTENANCE</p>
-                      <p class="mt-1 text-sm font-semibold">Ventilator — Preventive Maintenance</p>
-                    </div>
-                    <span class="text-neon text-xl">→</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <!-- subtle grid -->
+    <div class="absolute inset-0 opacity-[0.035]
+                pointer-events-none"
+         style="
+           background-image:
+           linear-gradient(rgba(57,255,136,.8) 1px, transparent 1px),
+           linear-gradient(90deg, rgba(57,255,136,.8) 1px, transparent 1px);
+           background-size: 32px 32px;
+         ">
+    </div>
+
+    <div class="relative z-10 p-5 md:p-6">
+
+      <!-- HEADER -->
+      <div class="mb-6">
+
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-neon shadow-[0_0_10px_#39ff88]"></span>
+
+          <span class="text-[8px] tracking-[.25em] text-neon/60 uppercase">
+            Biomedical Operations
+          </span>
         </div>
+
+        <h2 class="text-2xl md:text-[28px] font-bold text-white tracking-tight">
+          Welcome Back
+        </h2>
+
+        <p class="mt-1 text-xs md:text-sm text-gray-500 italic">
+          Here's what's happening across your organization today.
+        </p>
+
       </div>
-    </section>
+
+
+      <!-- DASHBOARD GRID -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+
+
+        <!-- TOTAL EQUIPMENTS -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              ▣
+            </div>
+
+            <span class="card-number">
+              12207
+            </span>
+          </div>
+
+          <p class="card-label">
+            TOTAL<br>EQUIPMENTS
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- ACTIVE TICKETS -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              ◈
+            </div>
+
+            <span class="card-number">
+              21029
+            </span>
+          </div>
+
+          <p class="card-label">
+            ACTIVE TICKETS
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- MANUFACTURERS -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              ▤
+            </div>
+
+            <span class="card-number">
+              443
+            </span>
+          </div>
+
+          <p class="card-label">
+            MANUFACTURERS
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- UPCOMING PM -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              □
+            </div>
+
+            <span class="card-number">
+              0
+            </span>
+          </div>
+
+          <p class="card-label">
+            UPCOMING PM
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- UPCOMING CALIBRATION -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              ⚒
+            </div>
+
+            <span class="card-number">
+              0
+            </span>
+          </div>
+
+          <p class="card-label">
+            UPCOMING<br>CALIBRATION
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- UPCOMING WARRANTY -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              ♢
+            </div>
+
+            <span class="card-number">
+              19
+            </span>
+          </div>
+
+          <p class="card-label">
+            UPCOMING<br>WARRANTY
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- UPCOMING AMC -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+            <div class="meridian-icon">
+              ▤
+            </div>
+
+            <span class="card-number">
+              0
+            </span>
+          </div>
+
+          <p class="card-label">
+            UPCOMING AMC
+          </p>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+
+        <!-- UPCOMING CMC -->
+        <div class="meridian-card">
+
+          <div class="card-top">
+
+            <div class="meridian-icon">
+              ✓
+            </div>
+
+            <span class="card-number">
+              3
+            </span>
+
+          </div>
+
+          <div class="flex items-center justify-between mt-3">
+
+            <p class="card-label !mt-0">
+              UPCOMING CMC
+            </p>
+
+            <span class="today-badge">
+              TODAY 1
+            </span>
+
+          </div>
+
+          <button class="meridian-button">
+            VIEW DETAILS
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
 
     <!-- STATS -->
     <section class="border-y border-white/10 bg-[#0a0f0c]">
